@@ -1,5 +1,5 @@
 '''
-Python实现KNN算法
+Python实现KNN算法,实现对鸢尾花数据的分类
 '''
 import numpy as np
 from sklearn import datasets

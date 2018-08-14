@@ -27,7 +27,6 @@ x_hat = np.linspace(x.min(), x.max(), num=10)
 x_hat.shape = -1, 1
 y_hat = model.predict(x_hat)
 plt.figure(figsize=(10, 10), facecolor='w')
-plt.subplot(2, 2, 1)
 plt.plot(x, y, 'ro', ms=10, zorder=N)
 s = model.score(x, y)
 label = u'$R^2$=%.3f' % (s)
@@ -39,3 +38,5 @@ plt.xlabel('X', fontsize=16)
 plt.ylabel('Y', fontsize=16)
 
 plt.tight_layout(1, rect=(0, 0, 1, 0.95))
+plt.savefig("../results/02_01_05.png")
+plt.show()

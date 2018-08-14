@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 
-dataLoad = pd.read_csv("data/watermelon30a.txt", header=None)
+dataLoad = pd.read_csv("../../data/watermelon30a.txt", header=None)
 x,y = dataLoad.values[:, :-1], dataLoad[2].tolist()
 y = pd.Categorical(y).codes
 train_x, test_x, train_y, test_y = train_test_split(x, y, train_size=0.45, random_state=123,
@@ -46,3 +46,5 @@ plt.xlabel("sepal width [cm]")
 plt.ylabel("petal length [cm]")
 plt.legend(loc="upper left")
 plt.title("Watermelon Classification results")
+plt.savefig("../results/02_01_04.png")
+plt.show()

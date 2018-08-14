@@ -14,7 +14,7 @@ import warnings
 
 warnings.filterwarnings(action='ignore')
 np.set_printoptions(suppress=True)
-file_data = pd.read_csv('data/housing.data', header=None)
+file_data = pd.read_csv('../../data/housing.data', header=None)
 x, y = file_data[np.arange(13)], file_data[13]
 print(u'样本个数：%d, 特征个数：%d' % x.shape)
 print(y.shape)
@@ -56,3 +56,5 @@ plt.title(u'波士顿房价预测', fontsize=18)
 plt.xlabel(u'样本编号', fontsize=15)
 plt.ylabel(u'房屋价格', fontsize=15)
 plt.grid()
+plt.savefig("../results/02_02_02.png")
+plt.show()

@@ -10,7 +10,7 @@ mpl.rcParams['font.sans-serif'] = [u'SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
 def loadDataSet():
-    dataLoad = pd.read_csv("data/randomcurve.txt", header=None)
+    dataLoad = pd.read_csv("../../data/randomcurve.txt", header=None)
     x = dataLoad.iloc[:, :2].values
     y = dataLoad.values[:, 2]
     return x, y
@@ -124,3 +124,5 @@ for index, ws in enumerate(list):
     plt.plot(xCopy[:, 1], yHat, c='b')
     plt.grid(True)
     plt.title(title)
+plt.savefig("02_02_01.png")
+plt.show()

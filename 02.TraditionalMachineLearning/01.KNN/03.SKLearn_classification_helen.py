@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 from sklearn.model_selection import GridSearchCV
 
-dataLoad = pd.read_csv("data/helen_date.txt", header=None)
+dataLoad = pd.read_csv("../../data/helen_date.txt", header=None)
 x = dataLoad[np.arange(4)]
 y = dataLoad[3]
 Nor_x = x.iloc[:, :2]
@@ -31,7 +31,6 @@ y_show_hat = y_show_hat.reshape(x1.shape)  # 使之与输入的形状相同
 
 colors ={"1":"orange", "2" : "black", "3" : "red"}
 
-
 plt.figure(figsize=(13,13), facecolor='w')
 for index, config in enumerate([[0,1],[0,2],[1,2], [0,1]]):
     plt.subplot(2,2, index + 1)
@@ -46,3 +45,7 @@ for index, config in enumerate([[0,1],[0,2],[1,2], [0,1]]):
         data_y = x.values[:, data_y_index].tolist()
     plt.scatter(data_x, data_y, c=y.ravel(), cmap=mpl.colors.ListedColormap(['orange', 'black', 'red']))
     plt.grid(True)
+
+plt.title(u'Helen约会数据的K近邻分类')
+plt.savefig("../results/02_01_03.png")
+plt.show()

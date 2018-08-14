@@ -16,7 +16,7 @@ mpl.rcParams['axes.unicode_minus'] = False
 cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 
-data = pd.read_csv("data/iris.data", header=None)
+data = pd.read_csv("../../data/iris.data", header=None)
 x = data[np.arange(4)]
 y = pd.Categorical(data[4]).codes
 x = x.iloc[:, :2]# 为了可视化，仅使用前两列特征
@@ -56,3 +56,5 @@ plt.ylim(x2_min, x2_max)
 plt.grid(True)
 
 plt.title(u'鸢尾花数据的K近邻分类\n测试集准确度: %.2f%%' % (100 * classifier.score(x_test, y_test)), fontsize=17)
+plt.savefig("../results/02_01_02.png")
+plt.show()
