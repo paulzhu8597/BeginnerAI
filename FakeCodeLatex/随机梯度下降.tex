@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage{CJK}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+ 
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+ 
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+    \begin{algorithm}
+        \caption{随机梯度下降}
+        \begin{algorithmic}[1] %每行显示行号
+            \Require $X$样本，$Y$样本, $\omega$初始化权重，$iter$迭代次数, $\alpha$学习率
+            \Ensure $\omega$权重
+            \Function {StochasticGradientDesent}{$X, Y, \omega, iter, \alpha$}
+            	\State $m \gets 1$
+                \For {$i$ in $iter$}
+                	\For {$j$ in $X.shape[0]$}
+						\State $predict \gets X_j$ @ $\omega$
+						\State $grad \gets X_j.T$ @ $(predict-Y_j)$ / $m$ * $\alpha$
+						\State $\omega \gets \omega$ - $grad$
+					\EndFor
+                \EndFor
+                \State \Return{$\omega$}
+            \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+\end{CJK*}
+\end{document}

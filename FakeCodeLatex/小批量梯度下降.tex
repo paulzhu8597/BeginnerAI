@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage{CJK}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+ 
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+ 
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+    \begin{algorithm}
+        \caption{小批量梯度下降}
+        \begin{algorithmic}[1] %每行显示行号
+            \Require $X$样本，$Y$样本, $\omega$初始化权重，$iter$迭代次数, $\alpha$学习率, $batchsize$Batch大小
+            \Ensure $\omega$权重
+            \Function {MiniBatchGradientDesent}{$X, Y, \omega, iter, \alpha, batchSize$}
+            	\State $m \gets batchSize$
+				\State $X_{batch} \gets X$ / $batchSize$
+				\State $Y_{batch} \gets Y$ / $batchSize$
+                \For {$x_{batch}$ in $X_{batch}$}
+                	\State $predict \gets x_{batch}$ @ $\omega$
+					\State $grad \gets x_{batch}.T$ @ $(predict-y_{batch})$ / $m$ * $\alpha$
+					\State $\omega \gets \omega$ - $grad$
+                \EndFor
+                \State \Return{$\omega$}
+            \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+\end{CJK*}
+\end{document}

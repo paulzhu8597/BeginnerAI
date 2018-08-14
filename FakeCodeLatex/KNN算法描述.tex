@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{CJK}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+ 
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+ 
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+    \begin{algorithm}
+        \caption{K近邻算法}
+        \begin{algorithmic}[1] %每行显示行号
+            \Require $XTest$样本，$XTrain$样本，$YTrain$样本
+            \Ensure $YPred$预测数据
+            \Function {KNN}{$XTest, XTrain, YTrain$}
+                \State $YPred \gets []$ 
+                \For {$i,test$ in $XTest$}
+                	\State $neighbours \gets []$
+                	\For {$j,train$ in $XTrain$}
+						\State $dis \gets $ \Call{computeEuDistance}{$train,test$}
+						\State $label \gets YTrain[j]$
+						\State $beighbours[j] \gets [dis,label]$
+					\EndFor
+					\State $k\_nerarest\_neighbuors \gets neighbours[neighbours[:,0].argsort()].[:k]$
+					\State $label = \Call{np.bincount}{k\_nerarest\_neighbuors}$
+					\State $YPred[i] \gets label$
+                \EndFor
+                
+                \State \Return{$YPred$}
+            \EndFunction
+        \end{algorithmic}
+    \end{algorithm}
+\end{CJK*}
+\end{document}
