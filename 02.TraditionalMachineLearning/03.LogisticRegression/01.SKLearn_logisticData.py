@@ -5,7 +5,7 @@ from lib.ProgressBar import ProgressBar
 def loadDataSet():
     dataMat = []                                                        #创建数据列表
     labelMat = []                                                        #创建标签列表
-    fr = open('data/logisticData.txt')                                            #打开文件
+    fr = open('../../data/logisticData.txt')                                            #打开文件
     for line in fr.readlines():                                            #逐行读取
         lineArr = line.strip().split()                                    #去回车，放入列表
         dataMat.append([1.0, float(lineArr[0]), float(lineArr[1])])        #添加数据
@@ -48,3 +48,5 @@ plt.scatter(X[:,1], X[:,2], c = Y[:, 0])
 x = np.arange(-3.0, 3.0, 0.1)
 y = (-lr.w[0] - lr.w[1] * x) / lr.w[2]
 plt.plot(x, y)
+plt.savefig("../results/02_03_01.png")
+plt.show()
