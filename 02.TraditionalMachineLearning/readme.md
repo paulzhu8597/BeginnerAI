@@ -23,3 +23,13 @@
 
 ## 心形图案拟合
 ![images](results/02_04_02.png)
+
+# 5.Bagging算法与随机森林
+## 决策树、Bagging算法和随机森林的比较
+![images](results/02_05_01.png)
+
+## 随机森林分类鸢尾花数据
+![images](results/02_05_02.png)
+
+## 随机森林拟合随机曲线
+![images](results/02_05_03.png)

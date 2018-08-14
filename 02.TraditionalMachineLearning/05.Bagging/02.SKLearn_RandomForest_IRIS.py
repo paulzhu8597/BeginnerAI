@@ -14,7 +14,7 @@ iris_feature = u'花萼长度', u'花萼宽度', u'花瓣长度', u'花瓣宽度
 mpl.rcParams['font.sans-serif'] = [u'SimHei']  # 黑体 FangSong/KaiTi
 mpl.rcParams['axes.unicode_minus'] = False
 
-data = pd.read_csv("data/iris.data", header=None)
+data = pd.read_csv("../../data/iris.data", header=None)
 x_prime = data[np.arange(4)]
 y = pd.Categorical(data[4]).codes
 
@@ -66,3 +66,5 @@ for i, pair in enumerate(feature_pairs):
 plt.tight_layout(2.5)
 plt.subplots_adjust(top=0.92)
 plt.suptitle(u'随机森林对鸢尾花数据的两特征组合的分类结果', fontsize=18)
+plt.savefig("../results/02_05_02.png")
+plt.show()

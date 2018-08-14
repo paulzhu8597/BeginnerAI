@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 from matplotlib import pyplot as plt
 
-df_wine = pd.read_csv("data/wine.data", header=None)
+df_wine = pd.read_csv("../../data/wine.data", header=None)
 df_wine.columns = ['Class label', 'Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']
 df_wine = df_wine[df_wine['Class label'] != 1] # 数据集中有3个类别，这里我们只用其中的2个类别
 y = df_wine['Class label'].values
@@ -64,3 +64,5 @@ for idx, clf, tt, score in zip([0, 1, 2], [tree, bag, rf], ['Decision tree', 'Ba
     plt.scatter(X_train[y_train==0, 0], X_train[y_train==0, 1], c='blue', marker='^')
     plt.scatter(X_train[y_train==1, 0], X_train[y_train==1, 1], c='red', marker='o')
     plt.title('%s---%.3f,%.3f' % (tt, score[0], score[1]),fontsize=20)
+plt.savefig("../results/02_05_01.png")
+plt.show()

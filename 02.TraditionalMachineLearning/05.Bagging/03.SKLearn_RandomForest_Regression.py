@@ -28,7 +28,6 @@ d_pool = np.arange(1, deep_length + 1, 3)  # 阶
 label = '随机森林回归'
 
 plt.figure(figsize=(18, 12), facecolor='w')
-plt.subplot(2, 2, 1)
 plt.plot(x, y, 'ro', ms=10, zorder=N)
 
 for i, d in enumerate(d_pool):
@@ -50,3 +49,5 @@ plt.xlabel('X', fontsize=16)
 plt.ylabel('Y', fontsize=16)
 
 plt.tight_layout(1, rect=(0, 0, 1, 0.95))
+plt.savefig("../results/02_05_03.png")
+plt.show()
