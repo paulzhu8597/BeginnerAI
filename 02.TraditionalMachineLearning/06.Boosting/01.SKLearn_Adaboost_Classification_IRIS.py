@@ -5,6 +5,7 @@ import matplotlib as mpl
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import train_test_split,StratifiedKFold, GridSearchCV
 from sklearn.linear_model import LogisticRegression
+
 # 花萼长度、花萼宽度，花瓣长度，花瓣宽度
 iris_feature_E = 'sepal length', 'sepal width', 'petal length', 'petal width'
 iris_feature = u'花萼长度', u'花萼宽度', u'花瓣长度', u'花瓣宽度'
@@ -13,7 +14,7 @@ iris_class = 'Iris-setosa', 'Iris-versicolor', 'Iris-virginica'
 mpl.rcParams['font.sans-serif'] = [u'SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 x = data[np.arange(4)]
 y = pd.Categorical(data[4]).codes
 
@@ -45,7 +46,6 @@ t2 = np.linspace(x2_min, x2_max, M)
 x1, x2 = np.meshgrid(t1, t2)  # 生成网格采样点
 x_show = np.stack((x1.flat, x2.flat), axis=1)  # 测试点
 
-
 cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 y_show_hat = model.predict(x_show)  # 预测值
@@ -60,7 +60,8 @@ plt.xlim(x1_min, x1_max)
 plt.ylim(x2_min, x2_max)
 plt.grid(True)
 plt.title(u'鸢尾花数据的Adaboost分类', fontsize=17)
-
+plt.savefig("../results/02_06_01.png")
+plt.show()
 # 训练集上的预测结果
 y_test = y_test.reshape(-1)
 result = (y_test_hat == y_test)   # True则预测正确，False则预测错误

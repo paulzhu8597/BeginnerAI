@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib as mpl
 import torch
 
-from lib.utils.ProgressBar import ProgressBar
+from lib.ProgressBar import ProgressBar
 import torch.nn.functional as F
 from matplotlib import pyplot as plt
 import matplotlib.animation as animation
@@ -21,7 +21,7 @@ mpl.rcParams['axes.unicode_minus'] = False
 cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 x_data = data[np.arange(4)]
 y_data = pd.Categorical(data[4]).codes
 
@@ -74,7 +74,7 @@ for step in range(STEPS):
     target_y = y.data.numpy()
     accuracy = sum(pred_y == target_y)/x.shape[0]
 
-    bar.show(loss.item(), accuracy)
+    bar.show(step, loss.item(), accuracy)
 
     if (step + 1) % DECAY_STEP == 0:
         out = net(Variable(torch.FloatTensor(x_show)))
@@ -100,5 +100,5 @@ def animate(i):
 
 anim = animation.FuncAnimation(fig, animate, frames=range(int(STEPS / DECAY_STEP)),
                                blit=False,interval=50)
-# anim.save("Pytorch_FlowerDeLuceTwoFeatures.gif", writer='imagemagick', fps=100)
-plt.show()
+anim.save("Pytorch_FlowerDeLuceTwoFeatures.gif", writer='imagemagick', fps=100)
+# plt.show()

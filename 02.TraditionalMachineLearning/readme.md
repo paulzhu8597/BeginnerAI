@@ -33,3 +33,30 @@
 
 ## 随机森林拟合随机曲线
 ![images](results/02_05_03.png)
+
+# 6.提升算法-Boosting
+## Adaboost算法
+| AdaBoost鸢尾花分类 | AdaBoost曲线拟合 |
+| ------------------ | ---------------- |
+| ![images](results/02_06_01.png) | ![images](results/02_06_02.png) |
+
+## 梯度提升树算法
+| GBDT鸢尾花分类 | GBRT曲线拟合 | Python版GBRT拟合 |
+| -------------- | ------------ | ---------------- |
+| ![images](results/02_06_03_01.png) | ![images](results/02_06_04.png) | ![images](results/02_06_05.png) |
+
+鸢尾花分类错误率
+![images](results/02_06_03_02.png)
+
+## XGBoost曲线拟合
+![images](results/02_06_08.png)
+
+# 8.支持向量机-SVM
+
+# 9.聚类-Cluster
+
+# 10.EM算法
+
+# 11.朴素贝叶斯算法
+
+# 13.综合

@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from sklearn.ensemble import AdaBoostRegressor
+
+mpl.rcParams['font.sans-serif'] = [u'SimHei']
+mpl.rcParams['axes.unicode_minus'] = False
 
 np.random.seed(0)
 np.set_printoptions(linewidth=1000)
@@ -21,7 +25,6 @@ d_pool = np.arange(1, deep_length + 1, 1)  # 阶
 label = 'Adaboost回归'
 
 plt.figure(figsize=(18, 12), facecolor='w')
-plt.subplot(2, 2, 1)
 plt.plot(x, y, 'ro', ms=10, zorder=N)
 
 for i, d in enumerate(d_pool):
@@ -43,3 +46,5 @@ plt.xlabel('X', fontsize=16)
 plt.ylabel('Y', fontsize=16)
 
 plt.tight_layout(1, rect=(0, 0, 1, 0.95))
+plt.savefig("../results/02_06_02.png")
+plt.show()

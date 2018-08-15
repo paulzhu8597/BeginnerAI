@@ -91,5 +91,5 @@ def animate(i):
 
 anim = animation.FuncAnimation(fig, animate, frames=range(int(STEPS / DECAY_STEP)),
                                blit=False,interval=50)
-# anim.save("Pytorch_NonLinear.gif", writer='imagemagick', fps=100)
-plt.show()
+anim.save("02_13_05.gif", writer='imagemagick', fps=100)
+# plt.show()

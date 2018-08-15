@@ -13,7 +13,7 @@ iris_class = 'Iris-setosa', 'Iris-versicolor', 'Iris-virginica'
 mpl.rcParams['font.sans-serif'] = [u'SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 x = data[np.arange(4)]
 y = pd.Categorical(data[4]).codes
 
@@ -48,7 +48,6 @@ cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 y_show_hat = model.predict(x_show)  # 预测值
 y_show_hat = y_show_hat.reshape(x1.shape)  # 使之与输入的形状相同
 plt.figure(figsize=(20,10), facecolor='w')
-plt.subplot(1,2,1)
 plt.pcolormesh(x1, x2, y_show_hat, cmap=cm_light)  # 预测值的显示
 plt.scatter(x_test[0], x_test[1], c=y_test.ravel(), edgecolors='k', s=150, zorder=10, cmap=cm_dark, marker='*')  # 测试数据
 plt.scatter(x[0], x[1], c=y.ravel(), edgecolors='k', s=40, cmap=cm_dark)  # 全部数据
@@ -58,6 +57,8 @@ plt.xlim(x1_min, x1_max)
 plt.ylim(x2_min, x2_max)
 plt.grid(True)
 plt.title(u'鸢尾花数据的GDBT分类', fontsize=17)
+plt.savefig("../results/02_06_03_01.png")
+plt.show()
 
 # 训练集上的预测结果
 y_test = y_test.reshape(-1)
@@ -77,9 +78,10 @@ for d in depth:
     err = 1 - np.mean(result)
     err_list.append(err)
     print(d, ' 错误率: %.2f%%' % (100 * err))
-plt.subplot(1,2,2)
 plt.plot(depth, err_list, 'ro-', lw=2)
 plt.xlabel(u'决策树深度', fontsize=15)
 plt.ylabel(u'错误率', fontsize=15)
 plt.title(u'决策树深度与过拟合', fontsize=17)
 plt.grid(True)
+plt.savefig("../results/02_06_03_02.png")
+plt.show()
