@@ -99,7 +99,7 @@ class KMeans(object):
         return ret_lst_label
 
 x, y = get_k_data()
-k = 3
+k = 4
 lst_idx = np.random.randint(x.shape[0], size=k)
 init_vec = x[lst_idx]
 km = KMeans(k, init_vec)
@@ -110,3 +110,5 @@ center_node = km.get_center_node()
 plt.figure(figsize=(10,10), facecolor='w')
 plt.scatter(x[:, 0], x[:, 1], c=y_hat, s=20)
 plt.scatter(center_node[:, 0], center_node[:, 1], marker="*",c='r', s=200, alpha=0.5)
+plt.savefig("../results/02_09_02.png")
+plt.show()

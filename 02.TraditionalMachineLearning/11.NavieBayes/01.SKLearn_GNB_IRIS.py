@@ -12,7 +12,7 @@ def iris_type(s):
     it = {'Iris-setosa': 0, 'Iris-versicolor': 1, 'Iris-virginica': 2}
     return it[s]
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 x, y = data[np.arange(4)], data[4]
 y = pd.Categorical(values=y).codes
 feature_names = u'花萼长度', u'花萼宽度', u'花瓣长度', u'花瓣宽度'
@@ -57,3 +57,5 @@ plt.xlim(x1_min, x1_max)
 plt.ylim(x2_min, x2_max)
 plt.title(u'GaussianNB对鸢尾花数据的分类结果', fontsize=18)
 plt.grid(True)
+plt.savefig("../results/02_11_01.png")
+plt.show()

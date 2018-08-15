@@ -15,7 +15,7 @@ import matplotlib as mpl
 
 mpl.rcParams['font.sans-serif'] = [u'SimHei']
 mpl.rcParams['axes.unicode_minus'] = False
-data = pd.read_csv('data/Advertising.csv')
+data = pd.read_csv('../../data/Advertising.csv')
 x = data[['TV', 'Radio']]
 y = data['Sales']
 
@@ -71,5 +71,5 @@ for i, clf in enumerate(modelList):
 plt.suptitle('广告销量预测',fontsize=18)
 plt.tight_layout(1.5)
 plt.subplots_adjust(top=0.92)
-# plt.imsave("~/Desktop/广告销量预测_各种算法比较.png")
+plt.savefig("../results/02_13_09.png")
 plt.show()

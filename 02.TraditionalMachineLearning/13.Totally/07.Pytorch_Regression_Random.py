@@ -3,7 +3,7 @@ from torch.nn import Linear, Sequential, ReLU, MSELoss
 import numpy as np
 from torch.autograd import Variable
 from torch.optim import SGD, RMSprop
-from lib.utils.ProgressBar import ProgressBar
+from lib.ProgressBar import ProgressBar
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
@@ -43,7 +43,7 @@ for step in range(STEPS):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    bar.show(loss.item())
+    bar.show(1, loss.item())
     if (step + 1) % DECAY_STEP == 0:
         predict.append(prediction.data.numpy())
         myloss.append(loss.item())
@@ -68,5 +68,5 @@ def update(i):
 
 ani = animation.FuncAnimation(fig, update, frames=range(int(STEPS / DECAY_STEP)),
                               init_func=init, interval=50)
-# ani.save("Pytorch_RandomCurve.gif", writer='imagemagick', fps=100)
-plt.show()
+ani.save("../results/02_13_07.gif", writer='imagemagick', fps=100)
+# plt.show()

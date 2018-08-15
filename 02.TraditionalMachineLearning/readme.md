@@ -63,9 +63,61 @@
 | ![images](results/02_08_03.png) | ![images](results/02_08_04.png) |
 
 # 9.聚类-Cluster
+## SKLearn实现KMeans算法
+![images](results/02_09_01.png)
+
+## Python实现KMeans算法
+![images](results/02_09_02.png)
+
+## SKLearn实现DBScan算法
+![images](results/02_09_03.png)
+
+## SKLearn实现MeanShift算法
+![images](results/02_09_04.png)
+
+## SKLearn实现AP算法
+![images](results/02_09_05.png)
 
 # 10.EM算法
+## EM算法
+![images](results/02_10_01.png)
+
+## Python实现GMM算法
+![images](results/02_10_02.png)
 
 # 11.朴素贝叶斯算法
+## SKLearn版朴素贝叶斯算法实现鸢尾花数据集分类
+![images](results/02_11_01.png)
+
+## 新闻组文本数据不同分类器间的比较
+![images](results/02_11_02.png)
 
 # 13.综合
+## 鸢尾花分类
+![images](results/02_13_01.png)
+
+## Pytorch鸢尾花分类
+![images](results/02_13_02.gif)
+
+## 鸢尾花分类-PCA降维
+![images](results/02_13_03.png)
+
+## SKLearn-线性不可分
+![images](results/02_13_04.png)
+
+## Pytorch线性不可分
+![images](results/02_13_05.gif)
+
+## 曲线拟合
+![images](results/02_13_06.png)
+
+| Pytorch曲线拟合 | Tensorflow曲线拟合 |
+| --------------- | ------------------ |
+| ![images](results/02_13_07.gif) | ![images](results/02_13_08.gif) |
+
+## 拟合广告收入曲线
+![images](results/02_13_09.png)
+
+| Pytorch曲线拟合 | Tensorflow曲线拟合 |
+| --------------- | ------------------ |
+| ![images](results/02_13_10.gif) | ![images](results/02_13_11.gif) |

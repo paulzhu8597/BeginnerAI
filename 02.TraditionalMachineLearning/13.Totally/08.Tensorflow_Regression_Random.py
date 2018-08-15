@@ -3,7 +3,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import matplotlib.animation as animation
-from lib.utils.ProgressBar import ProgressBar
+from lib.ProgressBar import ProgressBar
 
 STEPS = 30000
 DECAY_STEP = 100
@@ -40,7 +40,7 @@ with tf.Session() as sess:
     for step in range(STEPS):
         _, train_loss,prediction_value = sess.run([train_step, loss, prediction], feed_dict={x:x_data, y:y_data})
 
-        bar.show(train_loss)
+        bar.show(1, train_loss)
         if (step + 1) % DECAY_STEP == 0:
             predict.append(prediction_value)
             myloss.append(train_loss)
@@ -65,5 +65,5 @@ def update(i):
 
 ani = animation.FuncAnimation(fig, update, frames=range(int(STEPS / DECAY_STEP)),
                               init_func=init, interval=50)
-# ani.save("Tensorflow_RandomCurve.gif", writer='imagemagick', fps=100)
-plt.show()
+ani.save("../results/02_13_08.gif", writer='imagemagick', fps=100)
+# plt.show()

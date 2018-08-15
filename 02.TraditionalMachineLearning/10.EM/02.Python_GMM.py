@@ -128,3 +128,6 @@ plt.figure(facecolor='w')
 plt.scatter(k0[:,0],k0[:,1])
 plt.scatter(k1[:,0],k1[:,1])
 plt.scatter(k2[:,0],k2[:,1])
+
+plt.savefig("../results/02_10_02.png")
+plt.show()

@@ -58,3 +58,6 @@ for i in range(6):
     plt.title(u'$\epsilon$ = %.1f  m = %d，聚类数目：%d' % (eps, min_samples, n_clusters), fontsize=16)
 plt.tight_layout()
 plt.subplots_adjust(top=0.9)
+
+plt.savefig("../results/02_09_03.png")
+plt.show()

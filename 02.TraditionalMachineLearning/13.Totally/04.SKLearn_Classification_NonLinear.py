@@ -83,4 +83,5 @@ for i, clf in enumerate(modelList):
 plt.suptitle('非线性可分数据的分类',fontsize=18)
 plt.tight_layout(1.5)
 plt.subplots_adjust(top=0.92)
+plt.savefig("../results/02_13_04.png")
 plt.show()

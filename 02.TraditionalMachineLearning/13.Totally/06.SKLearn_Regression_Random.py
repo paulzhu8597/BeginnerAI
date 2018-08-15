@@ -73,4 +73,5 @@ for i, clf in enumerate(modelList):
 plt.suptitle('随机曲线的拟合',fontsize=18)
 plt.tight_layout(1.5)
 plt.subplots_adjust(top=0.92)
+plt.savefig("../results/02_13_06.png")
 plt.show()

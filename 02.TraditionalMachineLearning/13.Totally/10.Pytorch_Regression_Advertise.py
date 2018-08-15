@@ -1,14 +1,13 @@
 import pandas as pd
 import matplotlib as mpl
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import normalize
 
 import torch
 from torch.nn import Linear, Sequential, ReLU, MSELoss, Sigmoid
 import numpy as np
 from torch.autograd import Variable
 from torch.optim import SGD, Adam, RMSprop
-from lib.utils.ProgressBar import ProgressBar
+from lib.ProgressBar import ProgressBar
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
@@ -16,7 +15,7 @@ STEPS = 30000
 DECAY_STEP = 100
 
 # pandas读入
-dataFile = 'data/Advertising.csv'
+dataFile = '../../data/Advertising.csv'
 data = pd.read_csv(dataFile)
 x = data[['TV', 'Radio']]
 y = data['Sales']
@@ -59,7 +58,7 @@ for step in range(STEPS):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    bar.show(loss.item())
+    bar.show(1, loss.item())
     if (step + 1) % DECAY_STEP == 0:
         predict.append(prediction.data.numpy())
         myloss.append(loss.item())
@@ -85,27 +84,5 @@ def update(i):
 
 ani = animation.FuncAnimation(fig, update, frames=range(int(STEPS / DECAY_STEP)),
                               init_func=init, interval=50)
-# ani.save("Pytorch_Advertisement.gif", writer='imagemagick', fps=100)
-plt.show()
+ani.save("../results/02_13_10.gif", writer='imagemagick', fps=100)
 
-order = y_test.argsort(axis=0)
-y_test = y_test.values[order]
-y_test = np.reshape(y_test, newshape=(y_test.shape[0], 1))
-x_test = x_test.values[order, :]
-
-x_test = torch.FloatTensor(x_test)
-y_test = torch.FloatTensor(y_test)
-
-test_predict = Net(Variable(x_test))
-
-mse = np.average((test_predict.data.numpy() - np.array(y_test)) ** 2)
-print("MSE is :%.3f" % mse)
-
-plt.figure(facecolor='w')
-t = np.arange(len(x_test))
-plt.scatter(t, y_test)
-plt.plot(t, test_predict.data.numpy(), 'g-', linewidth=2, label=u'预测数据, MSE:%.3f' % mse)
-plt.legend(loc='upper left')
-plt.title('Pytorch', fontsize=18)
-plt.grid(b=True)
-plt.show()

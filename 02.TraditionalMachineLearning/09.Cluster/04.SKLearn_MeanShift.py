@@ -39,3 +39,6 @@ for i, mul in enumerate(np.linspace(0.1, 0.4, 4)):
 plt.tight_layout(2)
 plt.suptitle(u'MeanShift聚类', fontsize=20)
 plt.subplots_adjust(top=0.92)
+
+plt.savefig("../results/02_09_04.png")
+plt.show()

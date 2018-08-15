@@ -39,3 +39,5 @@ for i, mul in enumerate(np.linspace(1, 4, 9)):
 plt.tight_layout()
 plt.suptitle(u'AP聚类', fontsize=20)
 plt.subplots_adjust(top=0.92)
+plt.savefig("../results/02_09_05.png")
+plt.show()

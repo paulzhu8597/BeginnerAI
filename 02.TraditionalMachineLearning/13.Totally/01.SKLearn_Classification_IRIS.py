@@ -26,7 +26,7 @@ mpl.rcParams['axes.unicode_minus'] = False
 cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 x = data[np.arange(4)]
 y = pd.Categorical(data[4]).codes
 
@@ -87,4 +87,5 @@ for i, clf in enumerate(modelList):
 plt.suptitle('鸢尾花数据的二特征分类',fontsize=18,y=1.05)
 plt.tight_layout(1.5)
 plt.subplots_adjust(top=0.92)
+plt.savefig("../results/02_13_01.png")
 plt.show()

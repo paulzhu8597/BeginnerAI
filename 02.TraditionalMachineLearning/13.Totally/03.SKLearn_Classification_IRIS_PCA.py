@@ -28,7 +28,7 @@ mpl.rcParams['axes.unicode_minus'] = False
 cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])
 cm_dark = mpl.colors.ListedColormap(['g', 'r', 'b'])
 
-data = pd.read_csv('data/iris.data', header=None)
+data = pd.read_csv('../../data/iris.data', header=None)
 columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'type']
 data.rename(columns=dict(zip(np.arange(5), columns)), inplace=True)
 data['type'] = pd.Categorical(data['type']).codes
@@ -95,4 +95,5 @@ for i, clf in enumerate(modelList):
 plt.suptitle('鸢尾花数据的全特征分类',fontsize=18)
 plt.tight_layout(1.5)
 plt.subplots_adjust(top=0.92)
+plt.savefig("../results/02_13_03.png")
 plt.show()

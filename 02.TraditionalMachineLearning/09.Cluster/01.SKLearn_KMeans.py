@@ -103,3 +103,6 @@ plt.grid(True)
 
 plt.tight_layout(2, rect=(0, 0, 1, 0.97))
 plt.suptitle(u'数据分布对KMeans聚类的影响', fontsize=18)
+
+plt.savefig("../results/02_09_01.png")
+plt.show()

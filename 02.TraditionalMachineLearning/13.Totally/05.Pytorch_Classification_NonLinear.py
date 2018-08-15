@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib as mpl
 import torch
 
-from lib.utils.ProgressBar import ProgressBar
+from lib.ProgressBar import ProgressBar
 import torch.nn.functional as F
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
@@ -66,7 +66,7 @@ for step in range(STEPS):
     target_y = y.data.numpy()
     accuracy = sum(pred_y == target_y)/x.shape[0]
 
-    bar.show(loss.item(), accuracy)
+    bar.show(1, loss.item(), accuracy)
 
     if (step + 1) % DECAY_STEP == 0:
         out = net(Variable(torch.FloatTensor(x_show)))
