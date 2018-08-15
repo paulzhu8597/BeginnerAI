@@ -13,8 +13,7 @@ from lib.ProgressBar import ProgressBar
 torch.manual_seed(1)
 EPOCH = 10
 LR = 0.001
-GPU_NUMS = 10
-
+GPU_NUMS = 0
 
 class CNN(nn.Module):
     def __init__(self):
@@ -63,7 +62,7 @@ for epoch in range(EPOCH):
         target_y = b_y.cpu().data.numpy()
         accuracy = sum(pred_y == target_y) / len(target_y)
 
-        proBar.show(loss.data[0], accuracy)
+        proBar.show(epoch, loss.data[0], accuracy)
 
 test_x = Variable(torch.unsqueeze(torch.FloatTensor(train_data.test_data), dim=1).cuda() if GPU_NUMS > 0 else torch.unsqueeze(torch.FloatTensor(train_data.test_data), dim=1))
 test_y = Variable(torch.LongTensor(train_data.test_labels).cuda() if GPU_NUMS > 0 else torch.LongTensor(train_data.test_labels))
