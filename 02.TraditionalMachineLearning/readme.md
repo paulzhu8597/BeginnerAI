@@ -45,13 +45,22 @@
 | -------------- | ------------ | ---------------- |
 | ![images](results/02_06_03_01.png) | ![images](results/02_06_04.png) | ![images](results/02_06_05.png) |
 
-鸢尾花分类错误率
+### 鸢尾花分类错误率
 ![images](results/02_06_03_02.png)
 
 ## XGBoost曲线拟合
 ![images](results/02_06_08.png)
 
 # 8.支持向量机-SVM
+## Python实现SVM算法
+| 线性可分 | 线性不可分 |
+| -------- | ---------- |
+| ![images](results/02_08_01.png) | ![images](results/02_08_02.png) |
+
+## SKLearn实现SVM
+| 鸢尾花分类 | 曲线拟合 |
+| ---------- | -------- |
+| ![images](results/02_08_03.png) | ![images](results/02_08_04.png) |
 
 # 9.聚类-Cluster
 

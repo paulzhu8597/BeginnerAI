@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 
 iris_feature = u'花萼长度', u'花萼宽度', u'花瓣长度', u'花瓣宽度'
 
-data = pd.read_csv("data/iris.data", header=None)
+data = pd.read_csv("../../data/iris.data", header=None)
 x, y = data[np.arange(4)], data[4]
 y = pd.Categorical(y).codes
 x = x[[0, 1]]
@@ -62,3 +62,5 @@ plt.ylim(x2_min, x2_max)
 plt.title(u'鸢尾花SVM二特征分类', fontsize=16)
 plt.grid(b=True, ls=':')
 plt.tight_layout(pad=1.5)
+plt.savefig("../results/02_08_03.png")
+plt.show()

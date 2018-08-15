@@ -230,43 +230,12 @@ def train(model):
 
     return model
 
-'''
-线性可分
-'''
-x_len, y_len = 5, 10
-X_train, y = make_blobs(n_samples=1000, centers=2,
-                        n_features=2, random_state=1)
-
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train, y)
-y[y == 0] = -1
-C = 1000.0
-m = len(X_train_scaled)
-initial_alphas = np.zeros(m)
-initial_b = 0.0
-
-# Set tolerances
-tol = 0.01 # error tolerance
-eps = 0.01 # alpha tolerance
-
-# Instantiate model
-model = SMOModel(X_train_scaled, y, C, linear_kernel,
-                 initial_alphas, initial_b, np.zeros(m))
-
-# Initialize error cache
-initial_error = decision_function(model.alphas, model.y, model.kernel,
-                                  model.X, model.X, model.b) - model.y
-model.errors = initial_error
-np.random.seed(0)
-output = train(model)
-
-plt.figure(figsize=(10,10),facecolor='w')
-fig, ax = plt.subplots()
-grid, ax = plot_decision_boundary(output, ax)
 
 '''
 线性不可分
 '''
+tol = 0.01 # error tolerance
+eps = 0.01 # alpha tolerance
 X_train, y = make_circles(n_samples=500, noise=0.1,
                           factor=0.1, random_state=1)
 scaler = StandardScaler()
@@ -288,3 +257,5 @@ model.errors = initial_error
 output = train(model)
 fig, ax = plt.subplots()
 grid, ax = plot_decision_boundary(output, ax)
+plt.savefig("../results/02_08_02.png")
+plt.show()
