@@ -13,7 +13,7 @@ CONFIG = {
     "BATCH_SIZE" : 64,
     "EPOCH" : 100,
     "CLAMP_NUM" : 1e-2,
-    "LEARNING_RATE" : 5e-4
+    "LEARNING_RATE" : 5e-5
 }
 
 def weight_init(m):
@@ -40,13 +40,13 @@ class Generator(t.nn.Module):
             t.nn.ReLU(inplace=True)
         )
 
-        self.deconv3 = t.nn.t.nn.Sequential(
+        self.deconv3 = t.nn.Sequential(
             t.nn.ConvTranspose2d(in_channels=64 * 2, out_channels=64 * 1, kernel_size=4, stride=2, padding=1, bias=False),
             t.nn.BatchNorm2d(num_features=64 * 1),
             t.nn.ReLU(True)
         )
 
-        self.deconv4 = t.nn.t.nn.Sequential(
+        self.deconv4 = t.nn.Sequential(
             t.nn.ConvTranspose2d(in_channels=64 * 1, out_channels=CONFIG["IMAGE_CHANNEL"], kernel_size=4, stride=2, padding=1, bias=False),
             t.nn.Tanh()
         )
@@ -118,7 +118,7 @@ fix_noise = t.FloatTensor(100, CONFIG["NOISE_DIM"], 1, 1).normal_(0,1)
 fix_noise_var = t.autograd.Variable(fix_noise.cuda() if CONFIG["GPU_NUMS"] > 0 else fix_noise)
 
 bar = j_bar.ProgressBar(CONFIG["EPOCH"], len(train_loader), "D Loss:%.3f;G Loss:%.3f")
-for epoch in range(CONFIG["EPOCH"]):
+for epoch in range(1, CONFIG["EPOCH"] + 1):
     for index, (image, label) in enumerate(train_loader):
         real  = image
         real_var = t.autograd.Variable(real.cuda() if CONFIG["GPU_NUMS"] > 0 else real)
@@ -147,7 +147,7 @@ for epoch in range(CONFIG["EPOCH"]):
             optimizerG.step()
             if index%100==0:
                 pass
-        bar.show(D_fake.data[0], G_.data[0])
+        bar.show(epoch, D_fake.data[0], G_.data[0])
 
     fake_u=NetG(fix_noise_var)
-    tv.utils.save_image(fake_u.data,'outputs/cifar10_%03d.png' % epoch,nrow=10)
+    tv.utils.save_image(fake_u.data,'outputs/cifar10_%03d.png' % epoch,nrow=10, normalize=True,range=(-1,1), padding=0)

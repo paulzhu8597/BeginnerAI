@@ -62,7 +62,7 @@
 ### $28 \times 28$
 | 动画 | 10 Epochs | 30 Epochs | 50 Epochs |
 | ------- | ------- | ------- | ------- |
-| ![images](results/07_04_infoGAN_01_MNIST.gif.gif) | ![images](results/07_04_infoGAN_01_MNIST_10.png) | ![images](results/07_04_infoGAN_01_MNIST_30.png) | ![images](results/07_04_infoGAN_01_MNIST_50.png) |
+| ![images](results/07_04_infoGAN_01_MNIST.gif) | ![images](results/07_04_infoGAN_01_MNIST_10.png) | ![images](results/07_04_infoGAN_01_MNIST_30.png) | ![images](results/07_04_infoGAN_01_MNIST_50.png) |
 
 ### $32 \times 32$
 
@@ -71,3 +71,12 @@
 ### $96 \times 96$
 
 ## 7.5.WGAN
+### $28 \times 28$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_05_WGAN_01_MNIST.gif) | ![images](results/07_05_WGAN_01_MNIST_10.png) | ![images](results/07_05_WGAN_01_MNIST_50.png) | ![images](results/07_05_WGAN_01_MNIST_100.png) |
+
+### $32 \times 32$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_05_WGAN_02_Cifar10.gif) | ![images](results/07_05_WGAN_02_Cifar10_10.png) | ![images](results/07_05_WGAN_02_Cifar10_50.png) | ![images](results/07_05_WGAN_02_Cifar10_100.png) |

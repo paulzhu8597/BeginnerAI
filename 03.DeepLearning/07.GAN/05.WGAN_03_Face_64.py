@@ -13,7 +13,7 @@ CONFIG = {
     "BATCH_SIZE" : 64,
     "EPOCH" : 100,
     "CLAMP_NUM" : 1e-2,
-    "LEARNING_RATE" : 5e-4
+    "LEARNING_RATE" : 5e-5
 }
 
 def weight_init(m):

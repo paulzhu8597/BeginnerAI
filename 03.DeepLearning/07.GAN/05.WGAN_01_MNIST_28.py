@@ -10,12 +10,12 @@ import lib.ProgressBar as j_bar
 
 CONFIG = {
     "NOISE_DIM" : 100,
-    "GPU_NUMS" : 0,
+    "GPU_NUMS" : 1,
     "IMAGE_SIZE" : 28,
     "IMAGE_CHANNEL" : 1,
     "BATCH_SIZE" : 64,
     "EPOCH" : 100,
-    "CLAMP_NUM" : 0.1,
+    "CLAMP_NUM" : 0.01,
     "LEARNING_RATE" : 5e-5
 }
 
@@ -159,5 +159,5 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         bar.show(epoch, D_fake.item(), G_.item())
 
     fake_u=NetG(fix_noise_var)
-    tv.utils.save_image(fake_u.data,'outputs/mnist_%02d.png' % epoch,nrow=10)
+    tv.utils.save_image(fake_u.data,'outputs/mnist_%03d.png' % epoch,nrow=10)
 
