@@ -60,9 +60,9 @@
 
 ## 7.4.infoGAN
 ### $28 \times 28$
-| 动画 | 10 Epochs | 30 Epochs | 50 Epochs |
+| 动画 | 1 Epoch | 30 Epochs | 50 Epochs |
 | ------- | ------- | ------- | ------- |
-| ![images](results/07_04_infoGAN_01_MNIST.gif) | ![images](results/07_04_infoGAN_01_MNIST_10.png) | ![images](results/07_04_infoGAN_01_MNIST_30.png) | ![images](results/07_04_infoGAN_01_MNIST_50.png) |
+| ![images](results/07_04_infoGAN_01_MNIST.gif) | ![images](results/07_04_infoGAN_01_MNIST_01.png) | ![images](results/07_04_infoGAN_01_MNIST_30.png) | ![images](results/07_04_infoGAN_01_MNIST_50.png) |
 
 ### $32 \times 32$
 
