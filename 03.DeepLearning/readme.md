@@ -99,3 +99,46 @@
 ### $64 \times 64$
 
 ### $96 \times 96$
+
+## 7.7.LSGAN
+### $28 \times 28$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_07_LSGAN_01_MNIST.gif) | ![images](results/07_07_LSGAN_01_MNIST_10.png) | ![images](results/07_07_LSGAN_01_MNIST_50.png) | ![images](results/07_07_LSGAN_01_MNIST_50.png) |
+
+### $32 \times 32$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_07_LSGAN_02_Cifar10.gif) | ![images](results/07_07_LSGAN_02_Cifar10_10.png) | ![images](results/07_07_LSGAN_02_Cifar10_50.png) | ![images](results/07_07_LSGAN_02_Cifar10_100.png) |
+
+### $64 \times 64$
+
+### $96 \times 96$
+
+### $128 \times 128$
+
+## 7.8.BEGAN
+### $28 \times 28$
+
+### $32 \times 32$
+
+### $64 \times 64$
+
+### $96 \times 96$
+
+### $128 \times 128$
+
+## 7.9.CLSGAN
+将CGAN和LSGAN相结合，效果非常不错
+### $28 \times 28$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_09_CLSGAN_01_MNIST.gif) | ![images](results/07_09_CLSGAN_01_MNIST_10.png) | ![images](results/07_09_CLSGAN_01_MNIST_50.png) | ![images](results/07_09_CLSGAN_01_MNIST_50.png) |
+
+### $32 \times 32$
+
+### $64 \times 64$
+
+### $96 \times 96$
+
+### $128 \times 128$

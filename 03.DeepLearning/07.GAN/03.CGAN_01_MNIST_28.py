@@ -160,6 +160,7 @@ for epoch in range(1, CONFIG["EPOCHS"] + 1):
         img_fake_var = Variable(img_fake.cuda() if CONFIG["GPU_NUMS"] > 0 else img_fake)
         label_fake_G_var = Variable(onehot[label_fake].cuda() if CONFIG["GPU_NUMS"] > 0 else onehot[label_fake])
         label_fake_D_var = Variable(fill[label_fake].cuda() if CONFIG["GPU_NUMS"] > 0 else fill[label_fake])
+
         g_result = NetG(img_fake_var, label_fake_G_var)
         d_result = NetD(g_result, label_fake_D_var)
         d_result = d_result.squeeze()
