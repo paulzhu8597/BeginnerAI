@@ -80,3 +80,22 @@
 | 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](results/07_05_WGAN_02_Cifar10.gif) | ![images](results/07_05_WGAN_02_Cifar10_10.png) | ![images](results/07_05_WGAN_02_Cifar10_50.png) | ![images](results/07_05_WGAN_02_Cifar10_100.png) |
+
+### $64 \times 64$
+
+### $96 \times 96$
+
+## 7.6.WGANGP
+### $28 \times 28$
+| 动画 | 1 Epoch | 30 Epochs | 50 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_06_WGANGP_01_MNIST.gif) | ![images](results/07_06_WGANGP_01_MNIST_01.png) | ![images](results/07_06_WGANGP_01_MNIST_30.png) | ![images](results/07_06_WGANGP_01_MNIST_50.png) |
+
+### $32 \times 32$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_06_WGANGP_02_Cifar10.gif) | ![images](results/07_06_WGANGP_02_Cifar10_10.png) | ![images](results/07_06_WGANGP_02_Cifar10_50.png) | ![images](results/07_06_WGANGP_02_Cifar10_100.png) |
+
+### $64 \times 64$
+
+### $96 \times 96$
