@@ -119,6 +119,9 @@
 
 ## 7.8.BEGAN
 ### $28 \times 28$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_08_BEGAN_01_MNIST.gif) | ![images](results/07_08_BEGAN_01_MNIST_10.png) | ![images](results/07_08_BEGAN_01_MNIST_50.png) | ![images](results/07_08_BEGAN_01_MNIST_100.png) |
 
 ### $32 \times 32$
 
@@ -133,9 +136,12 @@
 ### $28 \times 28$
 | 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
-| ![images](results/07_09_CLSGAN_01_MNIST.gif) | ![images](results/07_09_CLSGAN_01_MNIST_10.png) | ![images](results/07_09_CLSGAN_01_MNIST_50.png) | ![images](results/07_09_CLSGAN_01_MNIST_50.png) |
+| ![images](results/07_09_CLSGAN_01_MNIST.gif) | ![images](results/07_09_CLSGAN_01_MNIST_10.png) | ![images](results/07_09_CLSGAN_01_MNIST_50.png) | ![images](results/07_09_CLSGAN_01_MNIST_100.png) |
 
 ### $32 \times 32$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_09_CLSGAN_02_Cifar10.gif) | ![images](results/07_09_CLSGAN_02_Cifar10_10.png) | ![images](results/07_09_CLSGAN_02_Cifar10_50.png) | ![images](results/07_09_CLSGAN_02_Cifar10_100.png) |
 
 ### $64 \times 64$
 
