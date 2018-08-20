@@ -84,6 +84,10 @@
 ### $64 \times 64$
 
 ### $96 \times 96$
+### $32 \times 32$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_05_WGAN_04_AnimateFace.gif) | ![images](results/07_05_WGAN_04_AnimateFace_10.png) | ![images](results/07_05_WGAN_04_AnimateFace_50.png) | ![images](results/07_05_WGAN_04_AnimateFace_100.png) |
 
 ## 7.6.WGANGP
 ### $28 \times 28$
@@ -114,6 +118,9 @@
 ### $64 \times 64$
 
 ### $96 \times 96$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_07_LSGAN_04_AnimateFace.gif) | ![images](results/07_07_LSGAN_04_AnimateFace_10.png) | ![images](results/07_07_LSGAN_04_AnimateFace_50.png) | ![images](results/07_07_LSGAN_04_AnimateFace_100.png) |
 
 ### $128 \times 128$
 
@@ -142,6 +149,21 @@
 | 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](results/07_09_CLSGAN_02_Cifar10.gif) | ![images](results/07_09_CLSGAN_02_Cifar10_10.png) | ![images](results/07_09_CLSGAN_02_Cifar10_50.png) | ![images](results/07_09_CLSGAN_02_Cifar10_100.png) |
+
+### $64 \times 64$
+
+### $96 \times 96$
+
+### $128 \times 128$
+
+## 7.10.CBEGAN
+将CGAN和BEGAN相结合
+### $28 \times 28$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_10_CBEGAN_01_MNIST.gif) | ![images](results/07_10_CBEGAN_01_MNIST_10.png) | ![images](results/07_10_CBEGAN_01_MNIST_50.png) | ![images](results/07_10_CBEGAN_01_MNIST_100.png) |
+
+### $32 \times 32$
 
 ### $64 \times 64$
 
