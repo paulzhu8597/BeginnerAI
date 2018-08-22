@@ -158,7 +158,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         noise_var = t_auto.Variable(noise.cuda() if CONFIG["GPU_NUMS"] > 0 else noise)
         alpha = t.rand(mini_batch).cuda() if CONFIG["GPU_NUMS"] > 0 else t.rand(mini_batch)
 
-        optimizerD.zero_grad()
+        NetD.zero_grad()
 
         D_real = NetD(real_var)
         D_real_loss = -t.mean(D_real)
@@ -176,7 +176,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         G_loss = D_loss
         if ((index+1) % 5) == 0:
             # update G network
-            optimizerG.zero_grad()
+            NetG.zero_grad()
 
             G_ = NetG(noise_var)
             D_fake = NetD(G_)

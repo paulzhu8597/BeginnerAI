@@ -132,7 +132,7 @@ for epoch in range(1, CONFIG["EPOCHS"] + 1):
 
         if ii % 1 ==0:
             # 训练判别器
-            optimizer_discriminator.zero_grad()
+            netD.zero_grad()
             ## 尽可能的把真图片判别为正确
             output = netD(real_img)
             error_d_real = criterion(output,true_labels)
@@ -150,7 +150,7 @@ for epoch in range(1, CONFIG["EPOCHS"] + 1):
 
         if ii % 1==0:
             # 训练生成器
-            optimizer_generator.zero_grad()
+            netG.zero_grad()
             noises.data.copy_(t.randn(CONFIG["BATCH_SIZE"],CONFIG["NOISE_DIM"],1,1))
             fake_img = netG(noises)
             output = netD(fake_img)

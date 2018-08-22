@@ -8,7 +8,7 @@ import torch.optim as t_optim
 import lib.ProgressBar as j_bar
 
 CONFIG = {
-    "DATA_PATH" : "/input/Faces/SquareImages/",
+    "DATA_PATH" : "/input/AnimateFace/",
     "EPOCH" : 100,
     "GPU_NUMS" : 1,
     "BATCH_SIZE" : 64,
@@ -188,5 +188,5 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         bar.show(epoch, D_loss.item(), G_loss.item())
 
     fake_u=NetG(fix_noise_var)
-    tv.utils.save_image(fake_u.data,'outputs/Face_%03d.png' % epoch,nrow=10)
+    tv.utils.save_image(fake_u.data,'outputs/AnimateFace_%03d.png' % epoch,nrow=10)
 

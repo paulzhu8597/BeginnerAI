@@ -175,7 +175,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         label_real_var = t_auto.Variable(t.ones(mini_batch, 1).cuda()  if CONFIG["GPU_NUMS"] > 0 else t.ones(mini_batch, 1))
         label_fake_var = t_auto.Variable(t.zeros(mini_batch, 1).cuda() if CONFIG["GPU_NUMS"] > 0 else t.zeros(mini_batch, 1))
 
-        optimizerD.zero_grad()
+        NetD.zero_grad()
 
         D_real = NetD(real_var)
         D_real_loss = MSE_LOSS(D_real, label_real_var)
@@ -188,7 +188,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         D_loss.backward()
         optimizerD.step()
 
-        optimizerG.zero_grad()
+        NetG.zero_grad()
 
         G_ = NetG(noise_var)
         D_fake = NetD(G_)

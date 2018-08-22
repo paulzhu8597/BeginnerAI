@@ -162,7 +162,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         label_real_var = t_auto.Variable(t.ones(mini_batch, 1).cuda()  if CONFIG["GPU_NUMS"] > 0 else t.ones(mini_batch, 1))
         label_fake_var = t_auto.Variable(t.zeros(mini_batch, 1).cuda() if CONFIG["GPU_NUMS"] > 0 else t.zeros(mini_batch, 1))
 
-        optimizerD.zero_grad()
+        NetD.zero_grad()
 
         label_real = label.squeeze().type(t.LongTensor)
         label_real = fill[label_real]
@@ -188,7 +188,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         D_loss.backward()
         optimizerD.step()
 
-        optimizerG.zero_grad()
+        NetG.zero_grad()
 
         img_fake = t.randn((mini_batch, CONFIG["NOISE_DIM"])).view(-1, CONFIG["NOISE_DIM"], 1, 1)
         label_fake = (t.rand(mini_batch, 1) * 10).type(t.LongTensor).squeeze()

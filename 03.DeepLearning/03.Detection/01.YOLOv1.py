@@ -87,5 +87,5 @@ for epoch in range(FROM_TRAIN_ITER, YOLOv1Config["EPOCHS"]):
     # 保存最新的模型
     torch.save(Net.state_dict(),"output/YoloV1_%d.pth" % epoch)
 
-    predict = YOLOv1Detection(YOLOv1Config["CLASSES"], sourceImagePath="../testImages/demo.jpg", targetImagePath=".", Net=Net)
+    predict = YOLOv1Detection(YOLOv1Config["CLASSES"], sourceImagePath="../testImages/demo.jpg", targetImagePath="outputs/", Net=Net)
     predict.imageShow()

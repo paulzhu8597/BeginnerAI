@@ -84,7 +84,6 @@
 ### $64 \times 64$
 
 ### $96 \times 96$
-### $32 \times 32$
 | 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](results/07_05_WGAN_04_AnimateFace.gif) | ![images](results/07_05_WGAN_04_AnimateFace_10.png) | ![images](results/07_05_WGAN_04_AnimateFace_50.png) | ![images](results/07_05_WGAN_04_AnimateFace_100.png) |
@@ -116,6 +115,9 @@
 | ![images](results/07_07_LSGAN_02_Cifar10.gif) | ![images](results/07_07_LSGAN_02_Cifar10_10.png) | ![images](results/07_07_LSGAN_02_Cifar10_50.png) | ![images](results/07_07_LSGAN_02_Cifar10_100.png) |
 
 ### $64 \times 64$
+| 动画 | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](results/07_07_LSGAN_03_Cat.gif) | ![images](results/07_07_LSGAN_03_Cat_10.png) | ![images](results/07_07_LSGAN_03_Cat_50.png) | ![images](results/07_07_LSGAN_03_Cat_100.png) |
 
 ### $96 \times 96$
 | 动画 | 10 Epochs | 50 Epochs | 100 Epochs |

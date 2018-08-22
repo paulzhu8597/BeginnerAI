@@ -56,7 +56,7 @@ train_loader = DataLoader(data_loader, batch_size=FCNConfig["BATCH_SIZE"], shuff
 Train
 '''
 bar = ProgressBar(FCNConfig["EPOCHS"], len(train_loader), "Loss:%.3f")
-for epoch in range(1, FCNConfig["EPOCHS"]):
+for epoch in range(1, FCNConfig["EPOCHS"] + 1):
     model.train()
     for i, (images, labels) in enumerate(train_loader):
         images = Variable(images.cuda() if FCNConfig["GPU_NUMS"] > 0 else images)
