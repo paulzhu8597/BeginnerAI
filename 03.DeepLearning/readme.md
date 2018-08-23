@@ -15,6 +15,7 @@
 # 6.人脸识别
 
 # 7.对抗生成网络
+动画GIF图都放在[link](https://pan.baidu.com/s/1VCq1ET-RoNLYBE8Plat62g#list/path=%2FBeginnerAI%2FGAN%E7%BB%93%E6%9E%9C%E5%8A%A8%E7%94%BB&parentPath=%2FBeginnerAI)
 ## 7.1.GAN
 ![images](result/07_01_Z.gif)<br/>
 ![images](result/07_01_batman.gif)<br/>
@@ -25,30 +26,25 @@
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_02_DCGAN_01_MNIST_001.png) | ![images](result/07_02_DCGAN_01_MNIST_010.png) | ![images](result/07_02_DCGAN_01_MNIST_050.png) | ![images](result/07_02_DCGAN_01_MNIST_100.png) |
 
-[GIF](gif/07_02_DCGAN_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_02_DCGAN_02_Cifar10_001.png) | ![images](result/07_02_DCGAN_02_Cifar10_010.png) | ![images](result/07_02_DCGAN_02_Cifar10_050.png) | ![images](result/07_02_DCGAN_02_Cifar10_100.png) |
-
-[GIF](gif/07_02_DCGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_02_DCGAN_03_Cat_001.png) | ![images](result/07_02_DCGAN_03_Cat_010.png) | ![images](result/07_02_DCGAN_03_Cat_050.png) | ![images](result/07_02_DCGAN_03_Cat_100.png) |
 
-[GIF](gif/07_02_DCGAN_03_Cat.gif)
-
 ### $96 \times 96$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_02_DCGAN_04_AnimateFace_001.png) | ![images](result/07_02_DCGAN_04_AnimateFace_010.png) | ![images](result/07_02_DCGAN_04_AnimateFace_050.png) | ![images](result/07_02_DCGAN_04_AnimateFace_100.png) |
 
-[GIF](gif/07_02_DCGAN_04_AnimateFace.gif)
-
 ### $128 \times 128$
+| 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](result/07_02_DCGAN_05_Cat_001.png) | ![images](result/07_02_DCGAN_05_Cat_010.png) | ![images](result/07_02_DCGAN_05_Cat_050.png) | ![images](result/07_02_DCGAN_05_Cat_100.png) |
 
 ## 7.3.CGAN
 ### $28 \times 28$
@@ -56,14 +52,10 @@
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_03_CGAN_01_MNIST_001.png) | ![images](result/07_03_CGAN_01_MNIST_010.png) | ![images](result/07_03_CGAN_01_MNIST_050.png) | ![images](result/07_03_CGAN_01_MNIST_100.png) |
 
-[GIF](gif/07_03_CGAN_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_03_CGAN_02_Cifar10_001.png) | ![images](result/07_03_CGAN_02_Cifar10_010.png) | ![images](result/07_03_CGAN_02_Cifar10_050.png) | ![images](result/07_03_CGAN_02_Cifar10_100.png) |
-
-[GIF](gif/07_03_CGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
 
@@ -76,8 +68,6 @@
 | 1 Epoch | 30 Epochs | 50 Epochs |
 | ------- | ------- | ------- |
 | ![images](result/07_04_infoGAN_01_MNIST_001.png) | ![images](result/07_04_infoGAN_01_MNIST_030.png) | ![images](result/07_04_infoGAN_01_MNIST_050.png) |
-
-[GIF](gif/07_04_infoGAN_01_MNIST.gif)
 
 ### $32 \times 32$
 
@@ -93,14 +83,10 @@
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_05_WGAN_01_MNIST_001.png) | ![images](result/07_05_WGAN_01_MNIST_010.png) | ![images](result/07_05_WGAN_01_MNIST_050.png) | ![images](result/07_05_WGAN_01_MNIST_100.png) |
 
-[GIF](gif/07_05_WGAN_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_05_WGAN_02_Cifar10_001.png) | ![images](result/07_05_WGAN_02_Cifar10_010.png) | ![images](result/07_05_WGAN_02_Cifar10_050.png) | ![images](result/07_05_WGAN_02_Cifar10_100.png) |
-
-[GIF](gif/07_05_WGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
 
@@ -108,8 +94,6 @@
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_05_WGAN_04_AnimateFace_001.png) | ![images](result/07_05_WGAN_04_AnimateFace_010.png) | ![images](result/07_05_WGAN_04_AnimateFace_050.png) | ![images](result/07_05_WGAN_04_AnimateFace_100.png) |
-
-[GIF](gif/07_05_WGAN_04_AnimateFace.gif)
 
 ### $128 \times 128$
 
@@ -119,14 +103,10 @@
 | ------- | ------- | ------- |
 | ![images](result/07_06_WGANGP_01_MNIST_001.png) | ![images](result/07_06_WGANGP_01_MNIST_030.png) | ![images](result/07_06_WGANGP_01_MNIST_050.png) |
 
-[GIF](gif/07_06_WGANGP_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_06_WGANGP_02_Cifar10_001.png) | ![images](result/07_06_WGANGP_02_Cifar10_010.png) | ![images](result/07_06_WGANGP_02_Cifar10_050.png) | ![images](result/07_06_WGANGP_02_Cifar10_100.png) |
-
-[GIF](gif/07_06_WGANGP_02_Cifar10.gif)
 
 ### $64 \times 64$
 
@@ -140,43 +120,31 @@
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_07_LSGAN_01_MNIST_001.png) | ![images](result/07_07_LSGAN_01_MNIST_010.png) | ![images](result/07_07_LSGAN_01_MNIST_050.png) | ![images](result/07_07_LSGAN_01_MNIST_100.png) |
 
-[GIF](gif/07_07_LSGAN_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_07_LSGAN_02_Cifar10_001.png) | ![images](result/07_07_LSGAN_02_Cifar10_010.png) | ![images](result/07_07_LSGAN_02_Cifar10_050.png) | ![images](result/07_07_LSGAN_02_Cifar10_100.png) |
-
-[GIF](gif/07_07_LSGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_07_LSGAN_03_Cat_001.png) | ![images](result/07_07_LSGAN_03_Cat_010.png) | ![images](result/07_07_LSGAN_03_Cat_050.png) | ![images](result/07_07_LSGAN_03_Cat_100.png) |
 
-[GIF](gif/07_07_LSGAN_03_Cat.gif)
-
 ### $96 \times 96$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_07_LSGAN_04_AnimateFace_001.png) | ![images](result/07_07_LSGAN_04_AnimateFace_010.png) | ![images](result/07_07_LSGAN_04_AnimateFace_050.png) | ![images](result/07_07_LSGAN_04_AnimateFace_100.png) |
-
-[GIF](gif/07_07_LSGAN_04_AnimateFace.gif)
 
 ### $128 \times 128$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_07_LSGAN_05_Cat_001.png) | ![images](result/07_07_LSGAN_05_Cat_010.png) | ![images](result/07_07_LSGAN_05_Cat_050.png) | ![images](result/07_07_LSGAN_05_Cat_100.png) |
 
-[GIF](gif/07_07_LSGAN_05_Cat.gif)
-
 ## 7.8.BEGAN
 ### $28 \times 28$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_08_BEGAN_01_MNIST_001.png) | ![images](result/07_08_BEGAN_01_MNIST_010.png) | ![images](result/07_08_BEGAN_01_MNIST_050.png) | ![images](result/07_08_BEGAN_01_MNIST_100.png) |
-
-[GIF](gif/07_08_BEGAN_01_MNIST.gif)
 
 ### $32 \times 32$
 
@@ -192,14 +160,10 @@
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_09_CLSGAN_01_MNIST_001.png) | ![images](result/07_09_CLSGAN_01_MNIST_010.png) | ![images](result/07_09_CLSGAN_01_MNIST_050.png) | ![images](result/07_09_CLSGAN_01_MNIST_100.png) |
 
-[GIF](gif/07_09_CLSGAN_01_MNIST.gif)
-
 ### $32 \times 32$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_09_CLSGAN_02_Cifar10_001.png) | ![images](result/07_09_CLSGAN_02_Cifar10_010.png) | ![images](result/07_09_CLSGAN_02_Cifar10_050.png) | ![images](result/07_09_CLSGAN_02_Cifar10_100.png) |
-
-[GIF](gif/07_09_CLSGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
 
@@ -212,8 +176,6 @@
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
 | ![images](result/07_10_CBEGAN_01_MNIST_001.png) | ![images](result/07_10_CBEGAN_01_MNIST_010.png) | ![images](result/07_10_CBEGAN_01_MNIST_050.png) | ![images](result/07_10_CBEGAN_01_MNIST_100.png) |
-
-[GIF](gif/07_10_CBEGAN_01_MNIST.gif)
 
 ### $32 \times 32$
 
