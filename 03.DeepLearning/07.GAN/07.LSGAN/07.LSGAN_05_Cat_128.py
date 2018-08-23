@@ -39,34 +39,41 @@ class Generator(torch.nn.Module):
 
         self.deconv1 = torch.nn.Sequential(
             torch.nn.ConvTranspose2d(100, 1024, 4, 1, 0, bias=False),
-            torch.nn.BatchNorm2d(1024),
-            torch.nn.ReLU()
-            # torch.nn.SELU(inplace=True)
+            # torch.nn.BatchNorm2d(1024),
+            # torch.nn.ReLU()
+            torch.nn.SELU(inplace=True)
         )
 
         self.deconv2 = torch.nn.Sequential(
             torch.nn.ConvTranspose2d(1024, 512, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(512),
-            torch.nn.ReLU()
-            # torch.nn.SELU(inplace=True)
+            # torch.nn.BatchNorm2d(512),
+            # torch.nn.ReLU()
+            torch.nn.SELU(inplace=True)
         )
 
         self.deconv3 = torch.nn.Sequential(
             torch.nn.ConvTranspose2d(512, 256, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(256),
-            torch.nn.ReLU()
-            # torch.nn.SELU(inplace=True)
+            # torch.nn.BatchNorm2d(256),
+            # torch.nn.ReLU()
+            torch.nn.SELU(inplace=True)
         )
 
         self.deconv4 = torch.nn.Sequential(
             torch.nn.ConvTranspose2d(256, 128, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(128),
-            torch.nn.ReLU()
-            # torch.nn.SELU(inplace=True)
+            # torch.nn.BatchNorm2d(128),
+            # torch.nn.ReLU()
+            torch.nn.SELU(inplace=True)
         )
 
         self.deconv5 = torch.nn.Sequential(
-            torch.nn.ConvTranspose2d(128, 3, 4, 2, 1, bias=False),
+            torch.nn.ConvTranspose2d(128, 64, 4, 2, 1, bias=False),
+            # torch.nn.BatchNorm2d(64),
+            # torch.nn.ReLU(),
+            torch.nn.SELU(inplace=True)
+        )
+
+        self.deconv6 = torch.nn.Sequential(
+            torch.nn.ConvTranspose2d(64, 3, 4, 2, 1, bias=False),
             torch.nn.Tanh()
         )
 
@@ -76,39 +83,47 @@ class Generator(torch.nn.Module):
         output = self.deconv3(output)
         output = self.deconv4(output)
         output = self.deconv5(output)
+        output = self.deconv6(output)
         return output
 
 class Discriminator(torch.nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
         self.conv1 = torch.nn.Sequential(
-            torch.nn.Conv2d(3, 128, 4, 2, 1, bias=False),
-            torch.nn.LeakyReLU(0.2, inplace=True)
-            # torch.nn.SELU(inplace=True)
+            torch.nn.Conv2d(3, 64, 4, 2, 1, bias=False),
+            # torch.nn.LeakyReLU(0.2, inplace=True)
+            torch.nn.SELU(inplace=True)
         )
 
         self.conv2 = torch.nn.Sequential(
-            torch.nn.Conv2d(128, 256, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(256),
-            torch.nn.LeakyReLU(0.2, inplace=True)
-            # torch.nn.SELU(inplace=True)
+            torch.nn.Conv2d(64, 128, 4, 2, 1, bias=False),
+            # torch.nn.BatchNorm2d(128),
+            # torch.nn.LeakyReLU(0.2, inplace=True)
+            torch.nn.SELU(inplace=True)
         )
 
         self.conv3 = torch.nn.Sequential(
-            torch.nn.Conv2d(256, 512, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(512),
-            torch.nn.LeakyReLU(0.2, inplace=True)
-            # torch.nn.SELU(inplace=True)
+            torch.nn.Conv2d(128, 256, 4, 2, 1, bias=False),
+            # torch.nn.BatchNorm2d(256),
+            # torch.nn.LeakyReLU(0.2, inplace=True)
+            torch.nn.SELU(inplace=True)
         )
 
         self.conv4 = torch.nn.Sequential(
-            torch.nn.Conv2d(512, 1024, 4, 2, 1, bias=False),
-            torch.nn.BatchNorm2d(1024),
-            torch.nn.LeakyReLU(0.2, inplace=True)
-            # torch.nn.SELU(inplace=True)
+            torch.nn.Conv2d(256, 512, 4, 2, 1, bias=False),
+            # torch.nn.BatchNorm2d(512),
+            # torch.nn.LeakyReLU(0.2, inplace=True)
+            torch.nn.SELU(inplace=True)
         )
 
         self.conv5 = torch.nn.Sequential(
+            torch.nn.Conv2d(512, 1024, 4, 2, 1, bias=False),
+            # torch.nn.BatchNorm2d(1024),
+            # torch.nn.LeakyReLU(0.2, inplace=True)
+            torch.nn.SELU(inplace=True)
+        )
+
+        self.conv6 = torch.nn.Sequential(
             torch.nn.Conv2d(1024, 1, 4, 1, 0, bias=False),
         )
 
@@ -118,6 +133,7 @@ class Discriminator(torch.nn.Module):
         output = self.conv3(output)
         output = self.conv4(output)
         output = self.conv5(output)
+        output = self.conv6(output)
         output = output.view(-1)
 
         return output

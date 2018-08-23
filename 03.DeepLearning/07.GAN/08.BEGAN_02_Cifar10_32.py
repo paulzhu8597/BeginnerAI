@@ -72,7 +72,7 @@ class Discriminator(t.nn.Module):
             t.nn.ELU(inplace=True),
             t.nn.Conv2d(64, 64, 3, 1, 1),
             t.nn.ELU(inplace=True),
-            t.nn.Conv2d(64, 64, 3, 1, 1),
+            t.nn.Conv2d(64, IMAGE_CHANNEL, 3, 1, 1),
         )
     def forward(self, x):
         h = self.conv_encoder(x)
@@ -134,6 +134,9 @@ dataset = j_data.Cifar10DataSetForPytorch(train=True, transform=tv.transforms.Co
      ]))
 train_loader = t.utils.data.DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
 
+noise = t.randn(100, NOISE_DIM)
+noise_var =  t_auto.Variable(noise.cuda() if GPU_NUMS > 0 else noise)
+
 k = 0
 proBar = j_bar.ProgressBar(EPOCHS, len(train_loader), "D Loss:%.3f;G Loss:%.3f")
 for epoch in range(1, EPOCHS + 1):
@@ -174,8 +177,6 @@ for epoch in range(1, EPOCHS + 1):
 
         proBar.show(epoch, errD.item(), errG.item())
 
-    noise = t.randn(100, NOISE_DIM)
-    noise_var =  t_auto.Variable(noise.cuda() if GPU_NUMS > 0 else noise)
     fake = Net_G(noise_var)
     tv.utils.save_image(fake.data,'outputs/Cifar10_%03d.png' % epoch, nrow=10)
 
