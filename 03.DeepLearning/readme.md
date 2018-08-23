@@ -70,7 +70,7 @@
 ### $28 \times 28$
 | 1 Epoch | 30 Epochs | 50 Epochs |
 | ------- | ------- | ------- |
-| ![images](result/07_04_infoGAN_01_MNIST_001.png) | ![images](result/07_03_CGAN_01_MNIST_030.png) | ![images](result/07_04_infoGAN_01_MNIST_050.png) |
+| ![images](result/07_04_infoGAN_01_MNIST_001.png) | ![images](result/07_04_infoGAN_01_MNIST_030.png) | ![images](result/07_04_infoGAN_01_MNIST_050.png) |
 
 [GIF](gif/07_04_infoGAN_01_MNIST.gif)
 
