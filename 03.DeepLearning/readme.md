@@ -35,6 +35,11 @@
 [GIF](gif/07_02_DCGAN_02_Cifar10.gif)
 
 ### $64 \times 64$
+| 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](result/07_02_DCGAN_03_Cat_001.png) | ![images](result/07_02_DCGAN_03_Cat_010.png) | ![images](result/07_02_DCGAN_03_Cat_050.png) | ![images](result/07_02_DCGAN_03_Cat_100.png) |
+
+[GIF](gif/07_02_DCGAN_03_Cat.gif)
 
 ### $96 \times 96$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
