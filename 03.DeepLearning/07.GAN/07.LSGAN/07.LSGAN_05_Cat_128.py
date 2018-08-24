@@ -38,7 +38,7 @@ class Generator(torch.nn.Module):
         super(Generator, self).__init__()
 
         self.deconv1 = torch.nn.Sequential(
-            torch.nn.ConvTranspose2d(100, 1024, 4, 1, 0, bias=False),
+            torch.nn.ConvTranspose2d(CONFIG["NOISE_DIM"], 1024, 4, 1, 0, bias=False),
             # torch.nn.BatchNorm2d(1024),
             # torch.nn.ReLU()
             torch.nn.SELU(inplace=True)
@@ -90,7 +90,7 @@ class Discriminator(torch.nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
         self.conv1 = torch.nn.Sequential(
-            torch.nn.Conv2d(3, 64, 4, 2, 1, bias=False),
+            torch.nn.Conv2d(CONFIG["IMAGE_CHANNEL"], 64, 4, 2, 1, bias=False),
             # torch.nn.LeakyReLU(0.2, inplace=True)
             torch.nn.SELU(inplace=True)
         )
@@ -181,10 +181,11 @@ optimizerG = torch.optim.Adam(G.parameters(), lr=CONFIG["LEARNING_RATE"], betas=
 bar = j_bar.ProgressBar(CONFIG["EPOCH"], len(dataset), "D loss:%.3f;G loss:%.3f")
 for epoch in range(1, CONFIG["EPOCH"] + 1):
 
+    if epoch == 30:
+        optimizerD.param_groups[0]['lr'] /= 2
+        optimizerG.param_groups[0]['lr'] /= 2
+
     for i, data_batch in enumerate(dataset, 0):
-        ########################
-        # (1) Update D network #
-        ########################
 
         for p in D.parameters():
             p.requires_grad = True
