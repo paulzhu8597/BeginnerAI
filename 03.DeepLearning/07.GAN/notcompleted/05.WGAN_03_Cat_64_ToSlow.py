@@ -164,8 +164,8 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         else:
             N_critic = 5
 
-        t = 0
-        while t < N_critic and i < len(dataset):
+        t1 = 0
+        while t1 < N_critic and i < len(dataset):
 
             NetD.zero_grad()
 
@@ -188,7 +188,7 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
             errD = (errD_real - errD_fake)
             optimizerD.step()
 
-            t = t + 1
+            t1 = t1 + 1
             i = i + 1
 
         for p in NetD.parameters():
