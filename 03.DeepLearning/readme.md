@@ -58,6 +58,9 @@
 | ![images](result/07_03_CGAN_02_Cifar10_001.png) | ![images](result/07_03_CGAN_02_Cifar10_010.png) | ![images](result/07_03_CGAN_02_Cifar10_050.png) | ![images](result/07_03_CGAN_02_Cifar10_100.png) |
 
 ### $64 \times 64$
+| 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](result/07_03_CGAN_03_Cat_001.png) | ![images](result/07_03_CGAN_03_Cat_010.png) | ![images](result/07_03_CGAN_03_Cat_050.png) | ![images](result/07_03_CGAN_03_Cat_100.png) |
 
 ### $96 \times 96$
 
