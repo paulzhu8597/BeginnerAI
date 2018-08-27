@@ -60,7 +60,7 @@
 ### $64 \times 64$
 | 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
 | ------- | ------- | ------- | ------- |
-| ![images](result/07_03_CGAN_03_Cat_001.png) | ![images](result/07_03_CGAN_03_Cat_010.png) | ![images](result/07_03_CGAN_03_Cat_050.png) | ![images](result/07_03_CGAN_03_Cat_100.png) |
+| ![images](result/07_03_CGAN_03_CAT_001.png) | ![images](result/07_03_CGAN_03_CAT_010.png) | ![images](result/07_03_CGAN_03_CAT_050.png) | ![images](result/07_03_CGAN_03_CAT_100.png) |
 
 ### $96 \times 96$
 
