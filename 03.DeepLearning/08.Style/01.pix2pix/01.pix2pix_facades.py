@@ -193,18 +193,18 @@ test_input, test_target = test_data_loader.__iter__().__next__()
 bar = j_bar.ProgressBar(CONFIG["EPOCH"], len(train_data_loader), "D loss:%.3f;G loss:%.3f")
 for epoch in range(1, CONFIG["EPOCH"] + 1):
     for i, (input, target) in enumerate(train_data_loader):
-        x_ = t_auto.Variable(input.cuda() if CONFIG["GPU_NUM"] > 1 else input)
-        y_ = t_auto.Variable(target.cuda() if CONFIG["GPU_NUM"] > 1 else target)
+        x_ = t_auto.Variable(input.cuda() if CONFIG["GPU_NUM"] > 0 else input)
+        y_ = t_auto.Variable(target.cuda() if CONFIG["GPU_NUM"] > 0 else target)
 
         # Train discriminator with real data
         D_real_decision = Net_D(x_, y_).squeeze()
-        real_ = t_auto.Variable(t.ones(D_real_decision.size()).cuda() if CONFIG["GPU_NUM"] > 1 else t.ones(D_real_decision.size()))
+        real_ = t_auto.Variable(t.ones(D_real_decision.size()).cuda() if CONFIG["GPU_NUM"] > 0 else t.ones(D_real_decision.size()))
         D_real_loss = BCE_loss(D_real_decision, real_)
 
         # Train discriminator with fake data
         gen_image = Net_G(x_)
         D_fake_decision = Net_D(x_, gen_image).squeeze()
-        fake_ = t_auto.Variable(t.zeros(D_fake_decision.size()).cuda() if CONFIG["GPU_NUM"] > 1 else t.zeros(D_fake_decision.size()))
+        fake_ = t_auto.Variable(t.zeros(D_fake_decision.size()).cuda() if CONFIG["GPU_NUM"] > 0 else t.zeros(D_fake_decision.size()))
         D_fake_loss = BCE_loss(D_fake_decision, fake_)
 
         # Back propagation
@@ -227,8 +227,8 @@ for epoch in range(1, CONFIG["EPOCH"] + 1):
         G_loss.backward()
         G_optimizer.step()
 
-        bar.show(D_loss.data[0], G_loss.data[0])
+        bar.show(epoch, D_loss.item(), G_loss.item())
 
-    gen_image = Net_G(t_auto.Variable(test_input.cuda() if CONFIG["GPU_NUM"] > 1 else test_input))
+    gen_image = Net_G(t_auto.Variable(test_input.cuda() if CONFIG["GPU_NUM"] > 0 else test_input))
     gen_image = gen_image.cpu().data
     j_utils.plot_test_result(test_input, test_target, gen_image, epoch, save=True, save_dir='outputs/')

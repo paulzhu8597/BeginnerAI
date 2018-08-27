@@ -109,10 +109,16 @@
 | ![images](result/07_06_WGANGP_02_Cifar10_001.png) | ![images](result/07_06_WGANGP_02_Cifar10_010.png) | ![images](result/07_06_WGANGP_02_Cifar10_050.png) | ![images](result/07_06_WGANGP_02_Cifar10_100.png) |
 
 ### $64 \times 64$
+| 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](result/07_06_WGANGP_03_Cat_001.png) | ![images](result/07_06_WGANGP_03_Cat_010.png) | ![images](result/07_06_WGANGP_03_Cat_050.png) | ![images](result/07_06_WGANGP_03_Cat_100.png) |
 
 ### $96 \times 96$
 
 ### $128 \times 128$
+| 1 Epoch | 10 Epochs | 50 Epochs | 100 Epochs |
+| ------- | ------- | ------- | ------- |
+| ![images](result/07_06_WGANGP_05_Cat_001.png) | ![images](result/07_06_WGANGP_05_Cat_010.png) | ![images](result/07_06_WGANGP_05_Cat_050.png) | ![images](result/07_06_WGANGP_05_Cat_100.png) |
 
 ## 7.7.LSGAN
 ### $28 \times 28$
